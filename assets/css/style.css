@@ -1099,14 +1099,20 @@ h1 em, h2 em, h3 em, h4 em,
 }
 
 .package-ribbon {
-  background-color: var(--accent-gold);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background-color: rgba(176, 141, 91, 0.94);
+  backdrop-filter: blur(4px);
   color: #FFFDF9;
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   text-align: center;
-  padding: 0.45rem 1rem;
+  padding: 0.42rem 1rem;
 }
 
 .package-card-img {
@@ -1684,7 +1690,7 @@ h1 em, h2 em, h3 em, h4 em,
   display: block;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
   .dashboard-sidebar {
     transform: translateX(-100%);
   }
@@ -1697,7 +1703,7 @@ h1 em, h2 em, h3 em, h4 em,
   .dashboard-main {
     margin-left: 0;
     margin-right: 0;
-    padding: 1.25rem 1rem 3rem;
+    padding: 1.25rem 1.5rem 3rem;
   }
   [dir="rtl"] .dashboard-main {
     margin-right: 0;
