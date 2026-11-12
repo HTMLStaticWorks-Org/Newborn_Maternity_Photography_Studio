@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Dashboard | Atelier Solène Luxury Photography Studio</title>
+  <meta name="description" content="Client Dashboard for Atelier Solène — book maternity and newborn sessions, view private proofing galleries, and order museum-grade archival prints.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Studio Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Mobile Sidebar Backdrop -->
+  <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+  <div class="dashboard-layout">
+    <!-- ======================================================================
+         FULL-HEIGHT LEFT SIDEBAR (TOP TO BOTTOM WITH LOGOUT BUTTON)
+         ====================================================================== -->
+    <aside id="dashboardSidebar" class="dashboard-sidebar" aria-label="Client Dashboard Menu">
+      <!-- Top: Brand Icon + Name & Primary Navigation -->
+      <div>
+        <a class="navbar-brand-luxury mb-4 pb-3 border-bottom d-flex" style="border-color: var(--border-subtle) !important;" href="index.html">
+          <svg class="brand-icon-svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="60" height="60" rx="14" stroke="#B08D5B" stroke-width="2.2"/>
+            <path d="M18 46V28C18 20.268 24.268 14 32 14C39.732 14 46 20.268 46 28V46" stroke="#B08D5B" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="32" cy="27" r="6" stroke="currentColor" stroke-width="2"/>
+            <path d="M23 44C25.2 38.5 28.4 36 32 36C35.6 36 38.8 38.5 41 44" stroke="#B08D5B" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-text-wrap">
+            <span class="brand-title" style="font-size: 1.25rem;">Atelier Solène</span>
+            <span class="brand-sub">Client Sanctuary</span>
+          </span>
+        </a>
+
+        <div class="mb-3 px-2">
+          <span class="small text-uppercase text-muted-luxury fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.16em;">
+            Client Menu
+          </span>
+        </div>
+
+        <nav>
+          <button type="button" class="dashboard-nav-link active" data-tab="panel-overview">
+            <i class="bi bi-grid"></i>
+            <span>Overview</span>
+          </button>
+          <button type="button" class="dashboard-nav-link" data-tab="panel-book">
+            <i class="bi bi-calendar2-heart"></i>
+            <span>Book Sessions</span>
+          </button>
+          <button type="button" class="dashboard-nav-link" data-tab="panel-galleries">
+            <i class="bi bi-images"></i>
+            <span>View Galleries</span>
+          </button>
+          <button type="button" class="dashboard-nav-link" data-tab="panel-prints">
+            <i class="bi bi-journal-album"></i>
+            <span>Order Prints</span>
+          </button>
+          <a href="index.html" class="dashboard-nav-link">
+            <i class="bi bi-arrow-left-circle"></i>
+            <span>Studio Website</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Bottom: Theme/RTL Quick Controls + Logout Button -->
+      <div class="pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+        <div class="d-flex align-items-center justify-content-between mb-3 px-1">
+          <span class="small text-muted-luxury">Appearance</span>
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="theme-toggle-btn" aria-label="Toggle theme">
+              <i class="bi bi-moon-stars"></i>
+            </button>
+            <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL layout">RTL</button>
+          </div>
+        </div>
+
+        <a href="login.html" class="dashboard-logout-btn">
+          <i class="bi bi-box-arrow-left"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CLIENT WORKSPACE
+         ====================================================================== -->
+    <main class="dashboard-main">
+      <!-- Top Workspace Header -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 pb-4 mb-4 border-bottom" style="border-color: var(--border-subtle) !important;">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" id="dashboardMenuToggle" class="btn btn-outline-secondary d-lg-none px-2 py-1" aria-label="Open menu">
+            <i class="bi bi-list fs-4"></i>
+          </button>
+          <div>
+            <span class="small text-gold text-uppercase fw-semibold d-block" style="letter-spacing: 0.14em; font-size: 0.68rem;">
+              Private Client Experience &bull; Demo Portal
+            </span>
+            <h1 class="h2 font-serif mb-0">Welcome, Ananya &amp; Rohan Mehta</h1>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <span class="badge bg-surface border text-secondary-luxury px-3 py-2 fw-normal" style="border-color: var(--border-gold) !important;">
+            <i class="bi bi-stars text-gold me-1"></i> First Chapter Collective Member
+          </span>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           PANEL 1: OVERVIEW
+           ==================================================================== -->
+      <section id="panel-overview" class="dashboard-panel active">
+        <div class="row g-4 mb-4">
+          <div class="col-md-4">
+            <div class="dashboard-stat-card">
+              <span class="small text-uppercase text-muted-luxury d-block mb-1" style="letter-spacing: 0.12em; font-size: 0.7rem;">Next Scheduled Session</span>
+              <div class="font-serif fs-3 text-gold mb-1">Newborn Studio</div>
+              <p class="small text-secondary-luxury mb-3">Tentative Window: Dec 12 – Dec 18 &bull; 10:00 AM</p>
+              <button type="button" class="btn-editorial-link" data-jump-tab="panel-book" style="background:none;border-top:0;border-left:0;border-right:0;">
+                <span>Manage Booking</span>
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="dashboard-stat-card">
+              <span class="small text-uppercase text-muted-luxury d-block mb-1" style="letter-spacing: 0.12em; font-size: 0.7rem;">Active Proofing Gallery</span>
+              <div class="font-serif fs-3 text-gold mb-1">32 Portraits Ready</div>
+              <p class="small text-secondary-luxury mb-3">
+                <strong id="favoritesCount">2</strong> portraits shortlisted for your linen album.
+              </p>
+              <button type="button" class="btn-editorial-link" data-jump-tab="panel-galleries" style="background:none;border-top:0;border-left:0;border-right:0;">
+                <span>Open Gallery</span>
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="dashboard-stat-card">
+              <span class="small text-uppercase text-muted-luxury d-block mb-1" style="letter-spacing: 0.12em; font-size: 0.7rem;">Heirloom Print Credit</span>
+              <div class="font-serif fs-3 text-gold mb-1">₹12,000 Available</div>
+              <p class="small text-secondary-luxury mb-3">Redeemable toward Belgian linen albums &amp; oak frames.</p>
+              <button type="button" class="btn-editorial-link" data-jump-tab="panel-prints" style="background:none;border-top:0;border-left:0;border-right:0;">
+                <span>Order Prints</span>
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="dashboard-stat-card">
+              <h2 class="h4 font-serif mb-3">Your Upcoming &amp; Completed Sessions</h2>
+              <div id="upcomingSessionsList" class="d-grid gap-3">
+                <div class="p-3 bg-ivory border rounded-1 d-flex justify-content-between align-items-center flex-wrap gap-2" style="border-color: var(--border-subtle) !important;">
+                  <div>
+                    <strong class="d-block font-serif fs-5">The Solène Heirloom Newborn Session</strong>
+                    <span class="small text-muted-luxury">Due Date Window: Dec 12, 2026 &bull; Daylight Studio Sanctuary</span>
+                  </div>
+                  <span class="badge bg-surface text-gold border" style="border-color: var(--border-gold) !important;">Reserved</span>
+                </div>
+                <div class="p-3 bg-ivory border rounded-1 d-flex justify-content-between align-items-center flex-wrap gap-2" style="border-color: var(--border-subtle) !important;">
+                  <div>
+                    <strong class="d-block font-serif fs-5">The Lumière Maternity Session (31 Weeks)</strong>
+                    <span class="small text-muted-luxury">Completed Oct 24, 2026 &bull; 32 Portraits Delivered</span>
+                  </div>
+                  <span class="badge bg-beige text-secondary-luxury border" style="border-color: var(--border-strong) !important;">Delivered</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="dashboard-stat-card">
+              <h2 class="h4 font-serif mb-3">Concierge Wardrobe Notes</h2>
+              <p class="small text-secondary-luxury mb-3">
+                For your upcoming Newborn session, Solène has reserved our oatmeal organic merino wrap set, ivory cashmere swaddle, and two cream silk nursing-friendly robes for Mother.
+              </p>
+              <a href="https://wa.me/919820456789?text=Hello%20Atelier%20Sol%C3%A8ne%2C%20message%20from%20Client%20Dashboard." target="_blank" rel="noopener noreferrer" class="btn-luxury btn-luxury-outline w-100">
+                <i class="bi bi-whatsapp text-gold"></i>
+                <span>Message Concierge</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 2: BOOK SESSIONS
+           ==================================================================== -->
+      <section id="panel-book" class="dashboard-panel">
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="dashboard-stat-card p-4">
+              <span class="eyebrow">Schedule Your Next Chapter</span>
+              <h2 class="h3 font-serif mb-2">Book a New Studio or Outdoor Session</h2>
+              <p class="small text-secondary-luxury mb-4">
+                Reserve your milestone sitter session, first birthday celebration, or update your newborn due-date window directly from your client portal.
+              </p>
+
+              <div id="dashBookingFeedback" class="d-none p-3 mb-4 rounded-1 border bg-beige" style="border-color: var(--accent-gold) !important;">
+                <strong class="font-serif fs-5 d-block text-gold">Session Request Added to Your Schedule</strong>
+                <span class="small text-secondary-luxury">Our concierge will confirm your preferred slot and send your styling checklist within 12 hours.</span>
+              </div>
+
+              <form id="dashboardBookingForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="dashSessionType" class="form-label-luxury">Select Session Collection *</label>
+                    <select id="dashSessionType" class="form-select-luxury" required>
+                      <option value="">Choose session type...</option>
+                      <option value="The Solène Heirloom Newborn Session">The Solène Heirloom Newborn Session (₹48,000)</option>
+                      <option value="The Little Sitter Milestone (6–9 Months)">The Little Sitter Milestone (6–9 Months — ₹26,000)</option>
+                      <option value="First Birthday Heirloom (12 Months)">First Birthday Heirloom (12 Months — ₹36,000)</option>
+                      <option value="Kinship Family &amp; Baby Portrait">Kinship Family &amp; Baby Portrait (₹38,000)</option>
+                    </select>
+                    <div class="invalid-feedback-luxury">Please choose a session collection.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="dashSessionDate" class="form-label-luxury">Preferred Date *</label>
+                    <input type="date" id="dashSessionDate" class="form-control-luxury" required>
+                    <div class="invalid-feedback-luxury">Please select a preferred date.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="dashSessionLocation" class="form-label-luxury">Setting</label>
+                    <select id="dashSessionLocation" class="form-select-luxury">
+                      <option value="Studio Sanctuary">Daylight Studio Sanctuary</option>
+                      <option value="Outdoor Botanical Estate">Outdoor Botanical Estate</option>
+                      <option value="In-Home Nursery Lifestyle">In-Home Nursery Lifestyle</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="dashNotes" class="form-label-luxury">Wardrobe &amp; Styling Requests</label>
+                    <textarea id="dashNotes" rows="3" class="form-control-luxury" placeholder="Specify preferred gown tones, sibling outfits, or hair &amp; makeup add-on..."></textarea>
+                  </div>
+
+                  <div class="col-12 pt-2">
+                    <button type="submit" class="btn-luxury btn-luxury-primary">
+                      <span>Request Session Slot</span>
+                      <i class="bi bi-calendar-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="dashboard-stat-card p-4">
+              <h3 class="h4 font-serif mb-3">Recommended Milestone Timeline</h3>
+              <ul class="small text-secondary-luxury d-grid gap-3">
+                <li class="pb-2 border-bottom" style="border-color: var(--border-subtle) !important;">
+                  <strong class="d-block text-gold">28 – 34 Weeks: Maternity</strong>
+                  <span>Best window for sculptural bump portraits &amp; studio silk gowns.</span>
+                </li>
+                <li class="pb-2 border-bottom" style="border-color: var(--border-subtle) !important;">
+                  <strong class="d-block text-gold">Days 5 – 14: Newborn</strong>
+                  <span>Baby sleeps deeply and curls naturally into serene poses.</span>
+                </li>
+                <li class="pb-2 border-bottom" style="border-color: var(--border-subtle) !important;">
+                  <strong class="d-block text-gold">6 – 9 Months: Little Sitter</strong>
+                  <span>Capturing joyful belly laughs and sitting unassisted.</span>
+                </li>
+                <li>
+                  <strong class="d-block text-gold">11 – 12 Months: First Birthday</strong>
+                  <span>Family portraits + organic botanical cake celebration.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 3: VIEW GALLERIES (PROOFING & FAVORITE SELECTION)
+           ==================================================================== -->
+      <section id="panel-galleries" class="dashboard-panel">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+          <div>
+            <span class="eyebrow">Private Proofing Collection</span>
+            <h2 class="h3 font-serif mb-1">Maternity &amp; Newborn Preview Gallery</h2>
+            <p class="small text-secondary-luxury mb-0">
+              Tap the heart icon to shortlist portraits for your Belgian linen album, or click any frame to inspect full resolution.
+            </p>
+          </div>
+          <button type="button" class="btn-luxury btn-luxury-gold" data-jump-tab="panel-prints">
+            <span>Order Prints From Selection</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-sm-6 col-xl-4">
+            <div class="dashboard-gallery-card">
+              <div class="gallery-card ratio-portrait" tabindex="0" role="button"
+                   data-title="Plate 01 — Sunlit Ivory Silk"
+                   data-meta="Maternity Proofing • Select #104"
+                   data-full="https://images.pexels.com/photos/3662840/pexels-photo-3662840.jpeg?auto=compress&cs=tinysrgb&w=1400">
+                <img src="https://images.pexels.com/photos/3662840/pexels-photo-3662840.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Maternity portrait in sunlit window">
+              </div>
+              <div class="p-3 d-flex justify-content-between align-items-center">
+                <div>
+                  <strong class="d-block font-serif fs-5">Plate 01 — Sunlit Silk</strong>
+                  <span class="small text-muted-luxury">File #AS-104</span>
+                </div>
+                <button type="button" class="favorite-heart-btn liked" aria-label="Favorite portrait">
+                  <i class="bi bi-heart-fill"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-4">
+            <div class="dashboard-gallery-card">
+              <div class="gallery-card ratio-portrait" tabindex="0" role="button"
+                   data-title="Plate 02 — Chiaroscuro Window"
+                   data-meta="Maternity Proofing • Select #108"
+                   data-full="https://images.pexels.com/photos/29831952/pexels-photo-29831952.jpeg?auto=compress&cs=tinysrgb&w=1400">
+                <img src="https://images.pexels.com/photos/29831952/pexels-photo-29831952.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Maternity silhouette by window">
+              </div>
+              <div class="p-3 d-flex justify-content-between align-items-center">
+                <div>
+                  <strong class="d-block font-serif fs-5">Plate 02 — Silhouette</strong>
+                  <span class="small text-muted-luxury">File #AS-108</span>
+                </div>
+                <button type="button" class="favorite-heart-btn liked" aria-label="Favorite portrait">
+                  <i class="bi bi-heart-fill"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-4">
+            <div class="dashboard-gallery-card">
+              <div class="gallery-card ratio-portrait" tabindex="0" role="button"
+                   data-title="Plate 03 — Golden Meadow Embrace"
+                   data-meta="Maternity Proofing • Select #115"
+                   data-full="https://images.pexels.com/photos/29598285/pexels-photo-29598285.jpeg?auto=compress&cs=tinysrgb&w=1400">
+                <img src="https://images.pexels.com/photos/29598285/pexels-photo-29598285.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Couple maternity portrait at sunset">
+              </div>
+              <div class="p-3 d-flex justify-content-between align-items-center">
+                <div>
+                  <strong class="d-block font-serif fs-5">Plate 03 — Golden Embrace</strong>
+                  <span class="small text-muted-luxury">File #AS-115</span>
+                </div>
+                <button type="button" class="favorite-heart-btn" aria-label="Favorite portrait">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-4">
+            <div class="dashboard-gallery-card">
+              <div class="gallery-card ratio-portrait" tabindex="0" role="button"
+                   data-title="Plate 04 — Newborn Stillness"
+                   data-meta="Newborn Sneak Peek • Select #201"
+                   data-full="https://images.pexels.com/photos/3845426/pexels-photo-3845426.jpeg?auto=compress&cs=tinysrgb&w=1400">
+                <img src="https://images.pexels.com/photos/3845426/pexels-photo-3845426.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Newborn sleeping on soft blanket">
+              </div>
+              <div class="p-3 d-flex justify-content-between align-items-center">
+                <div>
+                  <strong class="d-block font-serif fs-5">Plate 04 — Newborn Slumber</strong>
+                  <span class="small text-muted-luxury">File #AS-201</span>
+                </div>
+                <button type="button" class="favorite-heart-btn" aria-label="Favorite portrait">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-4">
+            <div class="dashboard-gallery-card">
+              <div class="gallery-card ratio-portrait" tabindex="0" role="button"
+                   data-title="Plate 05 — Mother’s Kiss"
+                   data-meta="Parent &amp; Baby • Select #209"
+                   data-full="https://images.pexels.com/photos/6182423/pexels-photo-6182423.jpeg?auto=compress&cs=tinysrgb&w=1400">
+                <img src="https://images.pexels.com/photos/6182423/pexels-photo-6182423.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mother kissing sleeping newborn">
+              </div>
+              <div class="p-3 d-flex justify-content-between align-items-center">
+                <div>
+                  <strong class="d-block font-serif fs-5">Plate 05 — Mother’s Kiss</strong>
+                  <span class="small text-muted-luxury">File #AS-209</span>
+                </div>
+                <button type="button" class="favorite-heart-btn" aria-label="Favorite portrait">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-4">
+            <div class="dashboard-gallery-card">
+              <div class="gallery-card ratio-portrait" tabindex="0" role="button"
+                   data-title="Plate 06 — Tiny Fingers"
+                   data-meta="Macro Detail • Select #214"
+                   data-full="https://images.pexels.com/photos/15745778/pexels-photo-15745778.jpeg?auto=compress&cs=tinysrgb&w=1400">
+                <img src="https://images.pexels.com/photos/15745778/pexels-photo-15745778.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Newborn tiny hand holding parent finger">
+              </div>
+              <div class="p-3 d-flex justify-content-between align-items-center">
+                <div>
+                  <strong class="d-block font-serif fs-5">Plate 06 — Tiny Fingers</strong>
+                  <span class="small text-muted-luxury">File #AS-214</span>
+                </div>
+                <button type="button" class="favorite-heart-btn" aria-label="Favorite portrait">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 4: ORDER PRINTS & HEIRLOOM ALBUMS
+           ==================================================================== -->
+      <section id="panel-prints" class="dashboard-panel">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="dashboard-stat-card p-4">
+              <span class="eyebrow">Museum-Grade Archival Print Lab</span>
+              <h2 class="h3 font-serif mb-2">Order Heirloom Prints, Linen Albums &amp; Frames</h2>
+              <p class="small text-secondary-luxury mb-4">
+                Printed on 310gsm Hahnemühle cotton rag fine-art paper and hand-mounted in our workshop. Select quantities below to calculate your order.
+              </p>
+
+              <div id="printOrderFeedback" class="d-none p-3 mb-4 rounded-1 border bg-beige" style="border-color: var(--accent-gold) !important;">
+                <strong class="font-serif fs-5 d-block text-gold">Print Order Submitted to Studio Lab</strong>
+                <span id="printOrderSummaryText" class="small text-secondary-luxury"></span>
+              </div>
+
+              <form id="printOrderForm">
+                <div class="d-grid gap-3 mb-4">
+                  <div class="p-3 bg-ivory border rounded-1 d-flex justify-content-between align-items-center flex-wrap gap-3" style="border-color: var(--border-subtle) !important;">
+                    <div>
+                      <strong class="d-block font-serif fs-5">10&times;10" Belgian Linen Layflat Album (20 Spreads)</strong>
+                      <span class="small text-muted-luxury">Custom gold-foil embossed cover &bull; ₹16,500 each</span>
+                    </div>
+                    <input type="number" min="0" max="10" value="1" class="form-control-luxury print-qty-input" data-price="16500" style="width: 90px;" aria-label="Album quantity">
+                  </div>
+
+                  <div class="p-3 bg-ivory border rounded-1 d-flex justify-content-between align-items-center flex-wrap gap-3" style="border-color: var(--border-subtle) !important;">
+                    <div>
+                      <strong class="d-block font-serif fs-5">16&times;20" Solid White Oak Framed Cotton Print</strong>
+                      <span class="small text-muted-luxury">Museum-matted with anti-reflective glass &bull; ₹9,500 each</span>
+                    </div>
+                    <input type="number" min="0" max="20" value="1" class="form-control-luxury print-qty-input" data-price="9500" style="width: 90px;" aria-label="Framed print quantity">
+                  </div>
+
+                  <div class="p-3 bg-ivory border rounded-1 d-flex justify-content-between align-items-center flex-wrap gap-3" style="border-color: var(--border-subtle) !important;">
+                    <div>
+                      <strong class="d-block font-serif fs-5">8&times;10" Matted Fine-Art Gift Prints (Set of 3)</strong>
+                      <span class="small text-muted-luxury">Ideal keepsake for grandparents &bull; ₹4,500 per set</span>
+                    </div>
+                    <input type="number" min="0" max="20" value="0" class="form-control-luxury print-qty-input" data-price="4500" style="width: 90px;" aria-label="Gift print set quantity">
+                  </div>
+
+                  <div class="p-3 bg-ivory border rounded-1 d-flex justify-content-between align-items-center flex-wrap gap-3" style="border-color: var(--border-subtle) !important;">
+                    <div>
+                      <strong class="d-block font-serif fs-5">6&times;6" Duplicate Grandparent Mini Album</strong>
+                      <span class="small text-muted-luxury">Matching linen swatch to your main album &bull; ₹5,500 each</span>
+                    </div>
+                    <input type="number" min="0" max="10" value="0" class="form-control-luxury print-qty-input" data-price="5500" style="width: 90px;" aria-label="Mini album quantity">
+                  </div>
+                </div>
+
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                  <div>
+                    <span class="small text-muted-luxury text-uppercase d-block" style="letter-spacing: 0.12em;">Estimated Print Total</span>
+                    <strong id="printOrderTotal" class="font-serif fs-2 text-gold">₹26,000</strong>
+                  </div>
+                  <button type="submit" class="btn-luxury btn-luxury-primary">
+                    <span>Place Print Order</span>
+                    <i class="bi bi-check2-circle"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="dashboard-stat-card p-4">
+              <h3 class="h4 font-serif mb-3">Material Craftsmanship</h3>
+              <div class="photo-frame ratio-landscape mb-3">
+                <img src="https://images.pexels.com/photos/11116578/pexels-photo-11116578.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Warm ivory nursery framing showcase">
+              </div>
+              <p class="small text-secondary-luxury mb-0">
+                Every archival print is individually color-calibrated by Solène before framing and delivered to your doorstep in acid-free protective linen packaging within 14 working days.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Lightbox Modal for Dashboard Gallery Preview -->
+  <div id="studioLightbox" class="studio-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image Lightbox">
+    <button type="button" id="lightboxClose" class="lightbox-close" aria-label="Close lightbox">
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <button type="button" id="lightboxPrev" class="lightbox-nav lightbox-prev" aria-label="Previous image">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button type="button" id="lightboxNext" class="lightbox-nav lightbox-next" aria-label="Next image">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+
+    <div class="lightbox-inner">
+      <div class="lightbox-img-container">
+        <img id="lightboxImage" src="" alt="Expanded fine-art portrait">
+      </div>
+      <div class="lightbox-caption-bar">
+        <span id="lightboxMeta" class="d-block small text-uppercase text-gold mb-1" style="letter-spacing: 0.16em; font-size: 0.7rem;"></span>
+        <h3 id="lightboxTitle" class="h3 font-serif text-white mb-1"></h3>
+        <span id="lightboxCounter" class="small opacity-75"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

@@ -1,2 +1,0 @@
-# Newborn_Maternity_Photography_Studio
-Automated website repository for Newborn_Maternity_Photography_Studio

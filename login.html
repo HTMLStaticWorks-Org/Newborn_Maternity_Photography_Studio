@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal Login | Atelier Solène Luxury Photography Studio</title>
+  <meta name="description" content="Sign in to the Atelier Solène Private Client Portal to book sessions, view galleries, and order archival heirloom prints.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Studio Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <main class="auth-standalone-page">
+    <div class="auth-standalone-card gsap-hero-fade">
+
+      <!-- Brand Icon & Name Placed Top Center Inside Card -->
+      <div class="text-center mb-4">
+        <a class="navbar-brand-luxury d-inline-flex justify-content-center mx-auto mb-3" href="index.html">
+          <svg class="brand-icon-svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="60" height="60" rx="14" stroke="#B08D5B" stroke-width="2.2"/>
+            <path d="M18 46V28C18 20.268 24.268 14 32 14C39.732 14 46 20.268 46 28V46" stroke="#B08D5B" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="32" cy="27" r="6" stroke="currentColor" stroke-width="2"/>
+            <path d="M23 44C25.2 38.5 28.4 36 32 36C35.6 36 38.8 38.5 41 44" stroke="#B08D5B" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-text-wrap text-start">
+            <span class="brand-title">Atelier Solène</span>
+            <span class="brand-sub">Fine-Art Portraiture</span>
+          </span>
+        </a>
+        <h1 class="h2 font-serif mb-1">Client Portal Sign In</h1>
+        <p class="small text-secondary-luxury mb-0">
+          Access your session calendar, proofing galleries &amp; heirloom print orders.
+        </p>
+      </div>
+
+      <!-- Frontend Template UI Notice & Interactive Submission Feedback -->
+      <div id="loginPortalFeedback" class="d-none p-3 mb-4 rounded-1 border bg-beige" style="border-color: var(--accent-gold) !important;" role="status">
+        <div class="d-flex align-items-start gap-2">
+          <i class="bi bi-info-circle-fill text-gold mt-1"></i>
+          <div class="small">
+            <strong class="d-block font-serif fs-6">Frontend Client Portal UI Preview</strong>
+            <span class="text-secondary-luxury">
+              Your credentials passed validation. You can explore the <a href="dashboard.html" class="text-gold text-decoration-underline fw-semibold">Client Dashboard Preview</a> directly.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Forgot Password Interactive Assistance Box -->
+      <div id="forgotPasswordNotice" class="d-none p-3 mb-4 rounded-1 border bg-ivory" style="border-color: var(--border-gold) !important;">
+        <p class="small text-secondary-luxury mb-0">
+          <strong>Need a Portal Access Link?</strong> Contact our Studio Concierge at <a href="mailto:concierge@ateliersolene.in" class="text-gold text-decoration-underline">concierge@ateliersolene.in</a> to receive a reset link.
+        </p>
+      </div>
+
+      <form id="clientLoginForm" novalidate>
+        <div class="row g-3">
+          <!-- Input Field 1: Separate Line -->
+          <div class="col-12">
+            <label for="loginEmail" class="form-label-luxury">Email Address</label>
+            <input type="email" id="loginEmail" name="loginEmail" class="form-control-luxury" placeholder="client@ateliersolene.in" required autocomplete="email">
+            <div class="invalid-feedback-luxury">Please enter a valid email address.</div>
+          </div>
+
+          <!-- Input Field 2: Separate Line -->
+          <div class="col-12">
+            <label for="loginPassword" class="form-label-luxury">Password</label>
+            <div class="password-field-wrap">
+              <input type="password" id="loginPassword" name="loginPassword" class="form-control-luxury pe-5" placeholder="Enter your password" required autocomplete="current-password">
+              <button type="button" class="password-toggle-btn" data-target="loginPassword" aria-label="Show password">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback-luxury">Please enter your password (minimum 6 characters).</div>
+          </div>
+
+          <!-- Remember Me & Forgot Password on the Same Line -->
+          <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-2 pt-1">
+            <label class="d-flex align-items-center gap-2 small text-secondary-luxury mb-0" style="cursor: pointer;">
+              <input type="checkbox" id="rememberMe" name="rememberMe" class="form-check-input mt-0">
+              <span>Remember me</span>
+            </label>
+            <a href="#forgotPasswordNotice" id="forgotPasswordLink" class="small text-gold" style="font-size: 0.8rem;">
+              Forgot Password?
+            </a>
+          </div>
+
+          <!-- Login Button -->
+          <div class="col-12 pt-2">
+            <button type="submit" class="btn-luxury btn-luxury-primary w-100">
+              <span>Sign In</span>
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Google & Apple Social Icons at Bottom -->
+      <div class="mt-4 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+        <p class="text-center small text-muted-luxury text-uppercase mb-3" style="letter-spacing: 0.14em; font-size: 0.68rem;">
+          Or Continue With
+        </p>
+        <div class="row g-2 mb-4">
+          <div class="col-6">
+            <button type="button" class="auth-social-btn" data-provider="Google">
+              <i class="bi bi-google"></i>
+              <span>Google</span>
+            </button>
+          </div>
+          <div class="col-6">
+            <button type="button" class="auth-social-btn" data-provider="Apple">
+              <i class="bi bi-apple"></i>
+              <span>Apple</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="text-center small text-secondary-luxury">
+          New to Atelier Solène?
+          <a href="signup.html" class="text-gold fw-semibold ms-1 text-decoration-underline">
+            Create an Account
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
