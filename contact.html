@@ -40,15 +40,10 @@
           </span>
         </a>
 
-        <div class="d-flex align-items-center gap-2 d-xl-none">
-          <button type="button" class="theme-toggle-btn" aria-label="Toggle theme">
-            <i class="bi bi-moon-stars"></i>
-          </button>
-          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL layout">RTL</button>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#studioNavbarCollapse" aria-controls="studioNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-list fs-4"></i>
-          </button>
-        </div>
+        <!-- Mobile Menu Toggle Button to Right Corner (All buttons moved inside menu page) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#studioNavbarCollapse" aria-controls="studioNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-4"></i>
+        </button>
 
         <div class="collapse navbar-collapse" id="studioNavbarCollapse">
           <ul class="navbar-nav mx-auto">
@@ -89,10 +84,19 @@
           </ul>
 
           <div class="navbar-actions">
-            <button type="button" class="theme-toggle-btn d-none d-xl-inline-flex" aria-label="Toggle light or dark theme">
+            <div class="d-flex align-items-center justify-content-between w-100 pb-2 border-bottom d-xl-none" style="border-color: var(--border-subtle) !important;">
+              <span class="small text-muted-luxury">Preferences &amp; Mode</span>
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL layout" title="Toggle RTL layout">RTL</button>
+                <button type="button" class="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
+                  <i class="bi bi-moon-stars"></i>
+                </button>
+              </div>
+            </div>
+            <button type="button" class="rtl-toggle-btn d-none d-xl-inline-flex" aria-label="Toggle RTL layout" title="Toggle RTL layout">RTL</button>
+            <button type="button" class="theme-toggle-btn d-none d-xl-inline-flex" aria-label="Toggle light or dark theme" title="Toggle theme">
               <i class="bi bi-moon-stars"></i>
             </button>
-            <button type="button" class="rtl-toggle-btn d-none d-xl-inline-flex" aria-label="Toggle RTL layout">RTL</button>
             <a href="signup.html" class="btn-nav-book">
               Sign Up
             </a>
@@ -285,33 +289,41 @@
                   </div>
 
                   <div class="col-md-6">
-                    <label for="dueDateOrBirthDate" class="form-label-luxury">
-                      Expected Due Date or Baby’s Birth Date <span class="text-muted-luxury fw-normal">(Optional)</span>
+                    <label for="dueDateOrBirthDate" class="form-label-luxury form-label-aligned">
+                      <span>Expected Due Date or Baby’s Birth Date <span class="text-muted-luxury fw-normal">(Optional)</span></span>
                     </label>
                     <input type="date" id="dueDateOrBirthDate" name="dueDateOrBirthDate" class="form-control-luxury">
                   </div>
 
                   <div class="col-md-6">
-                    <label for="preferredSessionDate" class="form-label-luxury">Preferred Session Date *</label>
+                    <label for="preferredSessionDate" class="form-label-luxury form-label-aligned">
+                      <span>Preferred Session Date *</span>
+                    </label>
                     <input type="date" id="preferredSessionDate" name="preferredSessionDate" class="form-control-luxury" required>
                     <div class="invalid-feedback-luxury">Please select your preferred session date.</div>
                   </div>
 
                   <div class="col-12">
-                    <span class="form-label-luxury">Preferred Location Setting *</span>
-                    <div class="d-flex flex-wrap gap-3 pt-1">
-                      <label class="d-flex align-items-center gap-2 p-2 px-3 border rounded-1 bg-ivory" style="border-color: var(--border-strong) !important; cursor: pointer;">
-                        <input type="radio" name="preferredLocation" value="Studio Sanctuary" checked>
-                        <span class="small">Natural-Light Studio Sanctuary</span>
-                      </label>
-                      <label class="d-flex align-items-center gap-2 p-2 px-3 border rounded-1 bg-ivory" style="border-color: var(--border-strong) !important; cursor: pointer;">
-                        <input type="radio" name="preferredLocation" value="Outdoor Golden Hour">
-                        <span class="small">Outdoor Golden Hour Estate</span>
-                      </label>
-                      <label class="d-flex align-items-center gap-2 p-2 px-3 border rounded-1 bg-ivory" style="border-color: var(--border-strong) !important; cursor: pointer;">
-                        <input type="radio" name="preferredLocation" value="Both Studio &amp; Outdoor">
-                        <span class="small">Both Studio &amp; Outdoor</span>
-                      </label>
+                    <span class="form-label-luxury d-block mb-2">Preferred Location Setting *</span>
+                    <div class="row g-2">
+                      <div class="col-sm-4">
+                        <label class="d-flex align-items-center gap-2 p-2 px-3 border rounded-1 bg-ivory h-100 mb-0" style="border-color: var(--border-strong) !important; cursor: pointer;">
+                          <input type="radio" name="preferredLocation" value="Studio Sanctuary" checked>
+                          <span class="small">Studio Sanctuary</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-4">
+                        <label class="d-flex align-items-center gap-2 p-2 px-3 border rounded-1 bg-ivory h-100 mb-0" style="border-color: var(--border-strong) !important; cursor: pointer;">
+                          <input type="radio" name="preferredLocation" value="Outdoor Golden Hour">
+                          <span class="small">Outdoor Golden Hour</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-4">
+                        <label class="d-flex align-items-center gap-2 p-2 px-3 border rounded-1 bg-ivory h-100 mb-0" style="border-color: var(--border-strong) !important; cursor: pointer;">
+                          <input type="radio" name="preferredLocation" value="Both Studio &amp; Outdoor">
+                          <span class="small">Both Studio &amp; Outdoor</span>
+                        </label>
+                      </div>
                     </div>
                   </div>
 

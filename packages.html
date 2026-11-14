@@ -40,15 +40,10 @@
           </span>
         </a>
 
-        <div class="d-flex align-items-center gap-2 d-xl-none">
-          <button type="button" class="theme-toggle-btn" aria-label="Toggle theme">
-            <i class="bi bi-moon-stars"></i>
-          </button>
-          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL layout">RTL</button>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#studioNavbarCollapse" aria-controls="studioNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-list fs-4"></i>
-          </button>
-        </div>
+        <!-- Mobile Menu Toggle Button to Right Corner (All buttons moved inside menu page) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#studioNavbarCollapse" aria-controls="studioNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-4"></i>
+        </button>
 
         <div class="collapse navbar-collapse" id="studioNavbarCollapse">
           <ul class="navbar-nav mx-auto">
@@ -89,10 +84,19 @@
           </ul>
 
           <div class="navbar-actions">
-            <button type="button" class="theme-toggle-btn d-none d-xl-inline-flex" aria-label="Toggle light or dark theme">
+            <div class="d-flex align-items-center justify-content-between w-100 pb-2 border-bottom d-xl-none" style="border-color: var(--border-subtle) !important;">
+              <span class="small text-muted-luxury">Preferences &amp; Mode</span>
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL layout" title="Toggle RTL layout">RTL</button>
+                <button type="button" class="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
+                  <i class="bi bi-moon-stars"></i>
+                </button>
+              </div>
+            </div>
+            <button type="button" class="rtl-toggle-btn d-none d-xl-inline-flex" aria-label="Toggle RTL layout" title="Toggle RTL layout">RTL</button>
+            <button type="button" class="theme-toggle-btn d-none d-xl-inline-flex" aria-label="Toggle light or dark theme" title="Toggle theme">
               <i class="bi bi-moon-stars"></i>
             </button>
-            <button type="button" class="rtl-toggle-btn d-none d-xl-inline-flex" aria-label="Toggle RTL layout">RTL</button>
             <a href="signup.html" class="btn-nav-book">
               Sign Up
             </a>
@@ -108,35 +112,25 @@
          ====================================================================== -->
     <section class="page-hero">
       <div class="container">
-        <div class="row align-items-center g-5">
+        <div class="row align-items-center g-4">
           <div class="col-lg-7 gsap-hero-fade">
             <span class="eyebrow">Heirloom Investment Guide</span>
             <h1 class="display-editorial mb-3">
               Curated <em>Collections</em> &amp; Bespoke Portraiture
             </h1>
-            <p class="section-subtitle mb-3">
-              Every family’s chapter is unique. Our collections include pre-session styling consultations, couture studio wardrobe access, master retouching, and archival prints.
+            <p class="section-subtitle mb-0">
+              Every family’s chapter is unique. Our collections include pre-session styling consultations, couture wardrobe access, master retouching, and archival heirlooms.
             </p>
-            <div class="d-flex flex-wrap gap-2">
-              <a href="#maternity-collection" class="btn-luxury btn-luxury-primary py-2 px-3">I. Maternity</a>
-              <a href="#newborn-collection" class="btn-luxury btn-luxury-outline py-2 px-3">II. Newborn</a>
-              <a href="#milestone-collection" class="btn-luxury btn-luxury-outline py-2 px-3">III. Milestones</a>
-              <a href="#bespoke-addons" class="btn-luxury btn-luxury-outline py-2 px-3">Add-Ons</a>
-            </div>
           </div>
           <div class="col-lg-5 gsap-hero-fade">
             <div class="p-4 bg-surface border rounded-1" style="border-color: var(--border-gold) !important;">
               <div class="d-flex align-items-center gap-2 text-gold mb-2">
                 <i class="bi bi-info-circle"></i>
-                <span class="small text-uppercase fw-semibold" style="letter-spacing: 0.14em;">Customization &amp; Pricing Note</span>
+                <span class="small text-uppercase fw-semibold" style="letter-spacing: 0.14em;">Customizable Pricing &amp; Dual Privilege</span>
               </div>
-              <p class="small text-secondary-luxury mb-2">
-                All sample prices displayed below are in <strong>Indian Rupees (INR ₹)</strong> and are fully customizable. Deliverables, album dimensions, and session durations can be tailored to suit your vision.
+              <p class="small text-secondary-luxury mb-0">
+                All sample prices displayed below are in <strong>Indian Rupees (INR ₹)</strong> and are customizable. Book Maternity &amp; Newborn collections together to enjoy a <strong>₹8,000 heirloom credit</strong> toward archival prints or albums.
               </p>
-              <div class="small text-muted-luxury pt-2 border-top" style="border-color: var(--border-subtle) !important;">
-                <i class="bi bi-calendar2-check text-gold me-1"></i>
-                <strong>Maternity + Newborn Dual Privilege:</strong> Enjoy ₹8,000 credit when booking both together.
-              </div>
             </div>
           </div>
         </div>
@@ -157,7 +151,7 @@
             </p>
           </div>
           <div class="col-lg-5 text-lg-end">
-            <span class="badge rounded-pill px-3 py-2 bg-surface border text-secondary-luxury fw-normal" style="border-color: var(--border-strong) !important;">
+            <span class="badge section-header-badge rounded-pill px-3 py-2 bg-surface border text-secondary-luxury fw-normal" style="border-color: var(--border-strong) !important;">
               <i class="bi bi-stars text-gold me-1"></i> Complimentary Access to 65+ Couture Maternity Gowns
             </span>
           </div>
@@ -172,11 +166,13 @@
               <div class="package-card-content">
                 <span class="showcase-meta">Individual Maternity</span>
                 <h3 class="h3 font-serif mb-1">The Petite Silhouette</h3>
-                <p class="small text-secondary-luxury mb-3">
+                <p class="small text-secondary-luxury mb-3 package-card-desc">
                   An intimate studio portrait session focused solely on the expecting mother’s radiant form.
                 </p>
-                <div class="package-price mb-1">₹24,000</div>
-                <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                <div class="package-price-wrap">
+                  <div class="package-price mb-1">₹24,000</div>
+                  <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                </div>
 
                 <ul class="package-deliverables">
                   <li><i class="bi bi-clock"></i> <span><strong>Duration:</strong> 60-Minute Private Session</span></li>
@@ -202,11 +198,13 @@
               <div class="package-card-content">
                 <span class="showcase-meta">Individual &amp; Couple</span>
                 <h3 class="h3 font-serif mb-1">The Lumière Maternity</h3>
-                <p class="small text-secondary-luxury mb-3">
+                <p class="small text-secondary-luxury mb-3 package-card-desc">
                   Our signature maternity experience blending solo editorial portraits with tender partner &amp; sibling connection.
                 </p>
-                <div class="package-price mb-1">₹34,000</div>
-                <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                <div class="package-price-wrap">
+                  <div class="package-price mb-1">₹34,000</div>
+                  <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                </div>
 
                 <ul class="package-deliverables">
                   <li><i class="bi bi-clock"></i> <span><strong>Duration:</strong> 90-Minute Unhurried Session</span></li>
@@ -231,11 +229,13 @@
               <div class="package-card-content">
                 <span class="showcase-meta">Studio + Golden Hour Outdoor</span>
                 <h3 class="h3 font-serif mb-1">The Couture Editorial</h3>
-                <p class="small text-secondary-luxury mb-3">
+                <p class="small text-secondary-luxury mb-3 package-card-desc">
                   The ultimate luxury maternity commission combining both our sunlit studio and a sunset outdoor setting.
                 </p>
-                <div class="package-price mb-1">₹49,000</div>
-                <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                <div class="package-price-wrap">
+                  <div class="package-price mb-1">₹49,000</div>
+                  <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                </div>
 
                 <ul class="package-deliverables">
                   <li><i class="bi bi-clock"></i> <span><strong>Duration:</strong> 2.5-Hour Dual-Location Experience</span></li>
@@ -269,7 +269,7 @@
             </p>
           </div>
           <div class="col-lg-5 text-lg-end">
-            <span class="badge rounded-pill px-3 py-2 bg-surface border text-secondary-luxury fw-normal" style="border-color: var(--border-strong) !important;">
+            <span class="badge section-header-badge rounded-pill px-3 py-2 bg-surface border text-secondary-luxury fw-normal" style="border-color: var(--border-strong) !important;">
               <i class="bi bi-shield-check text-gold me-1"></i> Certified Newborn Posing &amp; Flexible Due-Date Scheduling
             </span>
           </div>
@@ -279,16 +279,18 @@
           <div class="col-md-6 col-xl-4 gsap-reveal">
             <div class="package-tier-card">
               <div class="package-card-img">
-                <img src="https://images.pexels.com/photos/28680638/pexels-photo-28680638.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Black and white portrait of sleeping newborn wrapped on knit blanket" loading="lazy">
+                <img src="https://images.pexels.com/photos/18649610/pexels-photo-18649610.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Newborn baby sleeping peacefully wrapped in soft warm blanket" loading="lazy">
               </div>
               <div class="package-card-content">
                 <span class="showcase-meta">Wrapped Newborn Studio</span>
                 <h3 class="h3 font-serif mb-1">The Pure Newborn</h3>
-                <p class="small text-secondary-luxury mb-3">
+                <p class="small text-secondary-luxury mb-3 package-card-desc">
                   A serene, minimalist session dedicated to cozy wrapped portraits and delicate macro newborn details.
                 </p>
-                <div class="package-price mb-1">₹32,000</div>
-                <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                <div class="package-price-wrap">
+                  <div class="package-price mb-1">₹32,000</div>
+                  <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                </div>
 
                 <ul class="package-deliverables">
                   <li><i class="bi bi-clock"></i> <span><strong>Duration:</strong> Up to 2 Hours Baby-Led Session</span></li>
@@ -309,16 +311,18 @@
             <div class="package-tier-card featured">
               <div class="package-ribbon">Signature Newborn Experience</div>
               <div class="package-card-img">
-                <img src="https://images.pexels.com/photos/3845426/pexels-photo-3845426.jpeg?auto=compress&cs=tinysrgb&w=800" alt="The Solène Heirloom Newborn Session" loading="lazy">
+                <img src="https://images.pexels.com/photos/3845428/pexels-photo-3845428.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Newborn sleeping peacefully in daylight studio session" loading="lazy">
               </div>
               <div class="package-card-content">
                 <span class="showcase-meta">Fine-Art Newborn &amp; Parents</span>
                 <h3 class="h3 font-serif mb-1">The Solène Heirloom</h3>
-                <p class="small text-secondary-luxury mb-3">
+                <p class="small text-secondary-luxury mb-3 package-card-desc">
                   Complete fine-art newborn portraiture featuring organic bassinets, bare-skin studies, and intimate parent &amp; sibling portraits.
                 </p>
-                <div class="package-price mb-1">₹48,000</div>
-                <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                <div class="package-price-wrap">
+                  <div class="package-price mb-1">₹48,000</div>
+                  <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                </div>
 
                 <ul class="package-deliverables">
                   <li><i class="bi bi-clock"></i> <span><strong>Duration:</strong> Up to 3.5 Hours Unhurried Session</span></li>
@@ -338,16 +342,18 @@
           <div class="col-md-6 col-xl-4 gsap-reveal">
             <div class="package-tier-card">
               <div class="package-card-img">
-                <img src="https://images.pexels.com/photos/7919594/pexels-photo-7919594.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Happy parents smiling beside peaceful newborn baby" loading="lazy">
+                <img src="https://images.pexels.com/photos/3845438/pexels-photo-3845438.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Loving parents holding peaceful newborn baby in studio" loading="lazy">
               </div>
               <div class="package-card-content">
                 <span class="showcase-meta">Parent, Family &amp; Newborn</span>
                 <h3 class="h3 font-serif mb-1">The Grand Reserve</h3>
-                <p class="small text-secondary-luxury mb-3">
+                <p class="small text-secondary-luxury mb-3 package-card-desc">
                   For families desiring both fine-art studio portraits and a short cinematic highlight film with museum wall art.
                 </p>
-                <div class="package-price mb-1">₹66,000</div>
-                <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                <div class="package-price-wrap">
+                  <div class="package-price mb-1">₹66,000</div>
+                  <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                </div>
 
                 <ul class="package-deliverables">
                   <li><i class="bi bi-clock"></i> <span><strong>Duration:</strong> Full Half-Day Exclusive Studio Booking (4 Hours)</span></li>
@@ -381,7 +387,7 @@
             </p>
           </div>
           <div class="col-lg-5 text-lg-end">
-            <span class="badge rounded-pill px-3 py-2 bg-surface border text-secondary-luxury fw-normal" style="border-color: var(--border-strong) !important;">
+            <span class="badge section-header-badge rounded-pill px-3 py-2 bg-surface border text-secondary-luxury fw-normal" style="border-color: var(--border-strong) !important;">
               <i class="bi bi-heart text-gold me-1"></i> Curated Linen Rompers, Knits &amp; Wooden Heirloom Toys Included
             </span>
           </div>
@@ -396,11 +402,13 @@
               <div class="package-card-content">
                 <span class="showcase-meta">6 – 9 Months Milestone</span>
                 <h3 class="h3 font-serif mb-1">The Little Sitter</h3>
-                <p class="small text-secondary-luxury mb-3">
+                <p class="small text-secondary-luxury mb-3 package-card-desc">
                   Designed for babies sitting unassisted—capturing expressive eyes, claps, and joyful curiosity.
                 </p>
-                <div class="package-price mb-1">₹26,000</div>
-                <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                <div class="package-price-wrap">
+                  <div class="package-price mb-1">₹26,000</div>
+                  <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                </div>
 
                 <ul class="package-deliverables">
                   <li><i class="bi bi-clock"></i> <span><strong>Duration:</strong> 60-Minute Studio or Outdoor Session</span></li>
@@ -426,11 +434,13 @@
               <div class="package-card-content">
                 <span class="showcase-meta">11 – 13 Months Celebration</span>
                 <h3 class="h3 font-serif mb-1">First Birthday Heirloom</h3>
-                <p class="small text-secondary-luxury mb-3">
+                <p class="small text-secondary-luxury mb-3 package-card-desc">
                   Classic family portraits followed by an organic minimalist cake celebration and warm milk-bath splash.
                 </p>
-                <div class="package-price mb-1">₹36,000</div>
-                <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                <div class="package-price-wrap">
+                  <div class="package-price mb-1">₹36,000</div>
+                  <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                </div>
 
                 <ul class="package-deliverables">
                   <li><i class="bi bi-clock"></i> <span><strong>Duration:</strong> 90-Minute Celebration Session</span></li>
@@ -455,11 +465,13 @@
               <div class="package-card-content">
                 <span class="showcase-meta">Family &amp; Milestone Collective</span>
                 <h3 class="h3 font-serif mb-1">Kinship Family &amp; Baby</h3>
-                <p class="small text-secondary-luxury mb-3">
+                <p class="small text-secondary-luxury mb-3 package-card-desc">
                   Intimate family, sibling, and baby portraiture designed to capture connection in studio or golden-hour nature.
                 </p>
-                <div class="package-price mb-1">₹38,000</div>
-                <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                <div class="package-price-wrap">
+                  <div class="package-price mb-1">₹38,000</div>
+                  <span class="small text-muted-luxury">Sample customizable pricing (INR)</span>
+                </div>
 
                 <ul class="package-deliverables">
                   <li><i class="bi bi-clock"></i> <span><strong>Duration:</strong> 90-Minute Family &amp; Baby Session</span></li>
@@ -496,9 +508,9 @@
           </div>
         </div>
 
-        <div class="row g-3 justify-content-center">
-          <div class="col-md-6 gsap-reveal">
-            <div class="addon-item">
+        <div class="row g-3 justify-content-center align-items-stretch">
+          <div class="col-md-6 gsap-reveal d-flex flex-column">
+            <div class="addon-item h-100 w-100">
               <div>
                 <h3 class="h5 font-serif mb-1">Editorial Hair &amp; Makeup Artist (In-Studio)</h3>
                 <p class="small text-muted-luxury mb-0">Camera-ready, luminous natural glam tailored for studio light.</p>
@@ -507,8 +519,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 gsap-reveal">
-            <div class="addon-item">
+          <div class="col-md-6 gsap-reveal d-flex flex-column">
+            <div class="addon-item h-100 w-100">
               <div>
                 <h3 class="h5 font-serif mb-1">Hand-Bound Belgian Linen Album Upgrade (12&times;12")</h3>
                 <p class="small text-muted-luxury mb-0">30 layflat archival spreads with custom gold-foil name embossing.</p>
@@ -517,8 +529,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 gsap-reveal">
-            <div class="addon-item">
+          <div class="col-md-6 gsap-reveal d-flex flex-column">
+            <div class="addon-item h-100 w-100">
               <div>
                 <h3 class="h5 font-serif mb-1">Set of 5 Additional Fine-Art Retouched Portraits</h3>
                 <p class="small text-muted-luxury mb-0">High-resolution digital files with matching archival print release.</p>
@@ -527,8 +539,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 gsap-reveal">
-            <div class="addon-item">
+          <div class="col-md-6 gsap-reveal d-flex flex-column">
+            <div class="addon-item h-100 w-100">
               <div>
                 <h3 class="h5 font-serif mb-1">60-Second Cinematic Super-8 Style Motion Film</h3>
                 <p class="small text-muted-luxury mb-0">Captured alongside your portrait session, set to licensed acoustic score.</p>
@@ -537,8 +549,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 gsap-reveal">
-            <div class="addon-item">
+          <div class="col-md-6 gsap-reveal d-flex flex-column">
+            <div class="addon-item h-100 w-100">
               <div>
                 <h3 class="h5 font-serif mb-1">In-Home Nursery Newborn Lifestyle Surcharge</h3>
                 <p class="small text-muted-luxury mb-0">We bring mobile studio lighting, wraps, and styling directly to your residence.</p>
@@ -547,8 +559,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 gsap-reveal">
-            <div class="addon-item">
+          <div class="col-md-6 gsap-reveal d-flex flex-column">
+            <div class="addon-item h-100 w-100">
               <div>
                 <h3 class="h5 font-serif mb-1">Grandparent Duplicate Keepsake Mini-Albums (Set of 2)</h3>
                 <p class="small text-muted-luxury mb-0">Two 6&times;6" linen-bound duplicates of your primary family album.</p>

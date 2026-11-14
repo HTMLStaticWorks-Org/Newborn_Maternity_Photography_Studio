@@ -48,17 +48,11 @@
           </span>
         </a>
 
-        <!-- Mobile Controls -->
-        <div class="d-flex align-items-center gap-2 d-xl-none">
-          <button type="button" class="theme-toggle-btn" aria-label="Toggle theme">
-            <i class="bi bi-moon-stars"></i>
-          </button>
-          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL layout">RTL</button>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#studioNavbarCollapse"
-            aria-controls="studioNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-list fs-4"></i>
-          </button>
-        </div>
+        <!-- Mobile Menu Toggle Button to Right Corner (All buttons moved inside menu page) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#studioNavbarCollapse"
+          aria-controls="studioNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-4"></i>
+        </button>
 
         <!-- Collapsible Navigation Links -->
         <div class="collapse navbar-collapse" id="studioNavbarCollapse">
@@ -100,14 +94,22 @@
             </li>
           </ul>
 
-          <!-- Theme Toggle, RTL Toggle & Sign Up Button -->
+          <!-- Theme Toggle, RTL Toggle & Sign Up Button (Inside Menu Page for Mobile & Tab) -->
           <div class="navbar-actions">
+            <div class="d-flex align-items-center justify-content-between w-100 pb-2 border-bottom d-xl-none" style="border-color: var(--border-subtle) !important;">
+              <span class="small text-muted-luxury">Preferences &amp; Mode</span>
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL layout" title="Toggle RTL layout">RTL</button>
+                <button type="button" class="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
+                  <i class="bi bi-moon-stars"></i>
+                </button>
+              </div>
+            </div>
+            <button type="button" class="rtl-toggle-btn d-none d-xl-inline-flex" aria-label="Toggle RTL layout" title="Toggle RTL layout">RTL</button>
             <button type="button" class="theme-toggle-btn d-none d-xl-inline-flex"
-              aria-label="Toggle light or dark theme">
+              aria-label="Toggle light or dark theme" title="Toggle theme">
               <i class="bi bi-moon-stars"></i>
             </button>
-            <button type="button" class="rtl-toggle-btn d-none d-xl-inline-flex"
-              aria-label="Toggle RTL layout">RTL</button>
             <a href="signup.html" class="btn-nav-book">
               Sign Up
             </a>
@@ -630,8 +632,8 @@
             <div class="package-tier-card">
               <div class="package-card-img">
                 <img
-                  src="https://images.pexels.com/photos/37474211/pexels-photo-37474211.jpeg?auto=compress&cs=tinysrgb&w=900"
-                  alt="Expecting couple embracing warmly at golden hour outdoor session" loading="lazy">
+                  src="https://images.pexels.com/photos/20607810/pexels-photo-20607810.jpeg?auto=compress&cs=tinysrgb&w=900"
+                  alt="Expecting mother seated in studio fine-art maternity session" loading="lazy">
               </div>
               <div class="package-card-content">
                 <span class="showcase-meta">Maternity Portraiture</span>
@@ -737,7 +739,16 @@
           <div class="col-md-6 col-xl-4 gsap-reveal">
             <div class="testimonial-luxury-card">
               <div>
-                <div class="testimonial-quote-mark">“</div>
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <div class="testimonial-quote-mark mb-0">“</div>
+                  <div class="rating-stars" aria-label="5 out of 5 stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
                 <p class="mb-4 text-secondary-luxury fst-italic">
                   “As a first-time mother, I was nervous about taking my 8-day-old daughter out of the house. Walking
                   into Atelier Solène felt like stepping into a warm spa. Solène’s gentle touch put baby Aria to sleep
@@ -760,7 +771,16 @@
           <div class="col-md-6 col-xl-4 gsap-reveal">
             <div class="testimonial-luxury-card">
               <div>
-                <div class="testimonial-quote-mark">“</div>
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <div class="testimonial-quote-mark mb-0">“</div>
+                  <div class="rating-stars" aria-label="5 out of 5 stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
                 <p class="mb-4 text-secondary-luxury fst-italic">
                   “The client wardrobe alone is worth every rupee! I didn’t have to shop or worry about what would
                   flatter my 32-week bump. The silk gowns photographed like a dream, and our linen album is now the
@@ -783,7 +803,16 @@
           <div class="col-md-6 col-xl-4 gsap-reveal">
             <div class="testimonial-luxury-card">
               <div>
-                <div class="testimonial-quote-mark">“</div>
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <div class="testimonial-quote-mark mb-0">“</div>
+                  <div class="rating-stars" aria-label="5 out of 5 stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
                 <p class="mb-4 text-secondary-luxury fst-italic">
                   “We have returned to Atelier Solène for our son’s newborn session, 7-month sitter portraits, and first
                   birthday. The consistency, warmth, and museum-quality framing are unmatched anywhere in the city.”
